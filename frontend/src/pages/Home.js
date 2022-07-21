@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
+
 
 const Home = () => {
   return (
     <div className='mb-20'>
+      <Navbar/>
         <h1 className='sm:text-4xl text-2xl font-bold my-6 text-gray-900'>  Hello, welcome to Civil Tube Blog </h1>
         <p className='mx-auto leading-relaxed text-base mb-4'>
             Duis sint est occaecat ut exercitation mollit mollit ea ullamco. 
@@ -27,11 +30,11 @@ const Home = () => {
               Aliqua laboris magna sint irure exercitation reprehenderit consequat ut. Elit aliqua adipisicing 
             sint tempor nostrud proident non eiusmod ut nulla incididunt consectetur. Velit nulla id aute 
             eiusmod aliqua. Sint sunt consectetur et duis proident pariatur nulla aute in deserunt ullamco duis.
-             Ipsum mollit proident ullamco anim ea reprehenderit. Ut ullamco nulla id fugiat adipisicing ut pariatur.
-              Commodo minim qui laboris aliqua eiusmod incididunt eiusmod reprehenderit voluptate dolor sit magna occaecat.
-        </p>
-    </div>
-  )
-}
+              Ipsum mollit proident ullamco anim ea reprehenderit. Ut ullamco nulla id fugiat adipisicing ut pariatur.
+               Commodo minim qui laboris aliqua eiusmod incididunt eiusmod reprehenderit voluptate dolor sit magna occaecat.
+         </p>
+     </div>
+   )
+ }
 
 export default Home

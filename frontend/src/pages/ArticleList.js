@@ -1,8 +1,10 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
 
 const ArticleList = () => {
   return (
     <div>
+      <Navbar/>
         <h1 className='sm:text-4xl text-2xl font-bold my-6 text-gray-900'>  Articles </h1>
         <p className='mx-auto leading-relaxed text-base mb-4'>
             Duis sint est occaecat ut exercitation mollit mollit ea ullamco. 
@@ -34,4 +36,4 @@ const ArticleList = () => {
   )
 }
 
-export default ArticleList
+export default ArticleList;
