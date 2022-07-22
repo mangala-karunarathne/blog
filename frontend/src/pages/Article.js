@@ -1,37 +1,23 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import k from './article-content'
 
 const Article = () => {
+  const {name} = useParams(); 
+  const article = k.find((article)=>article.name ===name);
+  if (!article) return <h1> Article does not exist </h1>
   return (
     <div>
-       <h1 className='sm:text-4xl text-2xl font-bold my-6 text-gray-900'> This is a Article </h1> 
-       <p className='mx-auto leading-relaxed text-base mb-4'>
-            Duis sint est occaecat ut exercitation mollit mollit ea ullamco. 
-            Excepteur nisi in eiusmod qui tempor id tempor id tempor dolore 
-            ullamco veniam elit. Sit sint officia esse laborum amet tempor 
-            ullamco magna ex.
-        </p>
-        <p className='mx-auto leading-relaxed text-base mb-4'>
-            Aliqua laboris magna sint irure exercitation reprehenderit consequat ut. Elit aliqua adipisicing 
-            sint tempor nostrud proident non eiusmod ut nulla incididunt consectetur. Velit nulla id aute 
-            eiusmod aliqua. Sint sunt consectetur et duis proident pariatur nulla aute in deserunt ullamco duis.
-             Ipsum mollit proident ullamco anim ea reprehenderit. Ut ullamco nulla id fugiat adipisicing ut pariatur.
-              Commodo minim qui laboris aliqua eiusmod incididunt eiusmod reprehenderit voluptate dolor sit magna occaecat.
-        </p>
-        <p className='mx-auto leading-relaxed text-base mb-4'>
-            Aliqua laboris magna sint irure exercitation reprehenderit consequat ut. Elit aliqua adipisicing 
-            sint tempor nostrud proident non eiusmod ut nulla incididunt consectetur. Velit nulla id aute 
-            eiusmod aliqua. Sint sunt consectetur et duis proident pariatur nulla aute in deserunt ullamco duis.
-             Ipsum mollit proident ullamco anim ea reprehenderit. Ut ullamco nulla id fugiat adipisicing ut pariatur.
-              Commodo minim qui laboris aliqua eiusmod incididunt eiusmod reprehenderit voluptate dolor sit magna occaecat.
-
-              Aliqua laboris magna sint irure exercitation reprehenderit consequat ut. Elit aliqua adipisicing 
-            sint tempor nostrud proident non eiusmod ut nulla incididunt consectetur. Velit nulla id aute 
-            eiusmod aliqua. Sint sunt consectetur et duis proident pariatur nulla aute in deserunt ullamco duis.
-             Ipsum mollit proident ullamco anim ea reprehenderit. Ut ullamco nulla id fugiat adipisicing ut pariatur.
-              Commodo minim qui laboris aliqua eiusmod incididunt eiusmod reprehenderit voluptate dolor sit magna occaecat.
-        </p> 
+       <h1 className='sm:text-4xl text-2xl font-bold my-6 text-gray-900'>
+         {article.title}
+       </h1> 
+       {article.content.map((paragraph, index)=>(
+        <p className='mx-auto leading-relaxed text-base mb-4' key={index}>
+          {paragraph}
+        </p>    
+            ))}
     </div>
   )
 }
 
-export default Article
+export default Article;

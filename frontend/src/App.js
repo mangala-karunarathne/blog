@@ -1,13 +1,13 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Navbar from './components/Navbar';
+
+//Pages
 import About from './pages/About';
 import Article from './pages/Article';
 import ArticleList from './pages/ArticleList';
-// import { Link } from "react-router-dom";
-
-//Pages
 import Home from "./pages/Home";
 
+// Components
+import Navbar from './components/Navbar';
 function App() {
   return (
       <Router>
@@ -17,8 +17,9 @@ function App() {
             <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='/about' element={<About/>}/>
-              <Route path='/article' element={<Article/>}/>
               <Route path='/articlelist' element={<ArticleList/>}/>
+              {/* URL Parameter >> :name*/}
+              <Route path='/article/:name' element={<Article/>}/>
             </Routes>
         </div>
         
