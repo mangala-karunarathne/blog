@@ -13,7 +13,6 @@ function App() {
       <Router>
        <Navbar/>
         <div className="max-w-screen-md mx-auto pt-20">
-          
             <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='/about' element={<About/>}/>
