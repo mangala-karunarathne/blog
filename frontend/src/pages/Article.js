@@ -3,14 +3,17 @@ import { useParams } from 'react-router-dom';
 import articleContent from './article-content' 
 // Here articleContent is not a component but it just a name to call that entire article content
 
+// Pages
+import NotFound from './NotFound';
+
 //Components
 import Articles from '../components/Articles';
 
 const Article = () => {
   const {name} = useParams(); 
   const article = articleContent.find((article)=>article.name ===name);
-  if (!article) return <h1> Article does not exist </h1>
-  const otherArticles = articleContent.find((article)=>article.name !==name);
+  if (!article) return <NotFound/>
+  const otherArticles = articleContent.filter((article)=>article.name !==name);
   // console.log(otherArticles)
   console.log(typeof(otherArticles))
   console.log(otherArticles)
@@ -29,7 +32,7 @@ const Article = () => {
             Other Articles
           </h1>
             <div className='flex flex-wrap -m-4'>
-              {/* <Articles articles={otherArticles}/> */}
+              <Articles articles={otherArticles}/>
             </div>
     </>
   )
