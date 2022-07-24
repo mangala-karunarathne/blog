@@ -5,6 +5,7 @@ import About from './pages/About';
 import Article from './pages/Article';
 import ArticleList from './pages/ArticleList';
 import Home from "./pages/Home";
+import NotFound from './pages/NotFound';
 
 // Components
 import Navbar from './components/Navbar';
@@ -19,6 +20,7 @@ function App() {
               <Route path='/articlelist' element={<ArticleList/>}/>
               {/* URL Parameter >> :name*/}
               <Route path='/article/:name' element={<Article/>}/>
+              <Route path='*' element={<NotFound/>}/>
             </Routes>
         </div>
         

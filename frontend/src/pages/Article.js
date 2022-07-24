@@ -10,9 +10,10 @@ const Article = () => {
   const {name} = useParams(); 
   const article = articleContent.find((article)=>article.name ===name);
   if (!article) return <h1> Article does not exist </h1>
-  const otherArticles = articleContent.find((article)=> article.name !==name);
+  const otherArticles = articleContent.find((article)=>article.name !==name);
   // console.log(otherArticles)
   console.log(typeof(otherArticles))
+  console.log(otherArticles)
   console.log(typeof(article))
   return (
     <>
@@ -27,9 +28,9 @@ const Article = () => {
           <h1 className='sm:text-2x text-xl font-bold mt-4 mb-4 text-gray-900'>
             Other Articles
           </h1>
-            {/* <div className='flex flex-wrap -m-4'>
-              <Articles articles={otherArticles} />
-            </div> */}
+            <div className='flex flex-wrap -m-4'>
+              {/* <Articles articles={otherArticles}/> */}
+            </div>
     </>
   )
 }
