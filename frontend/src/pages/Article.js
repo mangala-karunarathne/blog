@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import articleContent from './article-content' 
 // Here articleContent is not a component but it just a name to call that entire article content
@@ -12,6 +12,12 @@ import Articles from '../components/Articles';
 const Article = () => {
   const {name} = useParams(); 
   const article = articleContent.find((article)=>article.name ===name);
+  const [articleInfo, setarticleInfo] = useState({comments:[]});
+
+  useEffect(()=>{
+    console.log("Component Mounted");
+  })
+
   if (!article) return <NotFound/>
   const otherArticles = articleContent.filter((article)=>article.name !==name);
   // console.log(otherArticles)

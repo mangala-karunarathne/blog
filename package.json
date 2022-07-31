@@ -4,7 +4,10 @@
   "description": "Mern app to learn Full Stack Development",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon"
+    "server": "nodemon",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"
+
   },
   "repository": {
     "type": "git",
