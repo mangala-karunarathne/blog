@@ -2,11 +2,11 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "Mern app to learn Full Stack Development",
-  "main": "server.js",
+  "main": "server.js", 
   "scripts": {
     "server": "nodemon",
-    "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\""
 
   },
   "repository": {
