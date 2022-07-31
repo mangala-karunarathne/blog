@@ -8,15 +8,22 @@ import NotFound from './NotFound';
 
 //Components
 import Articles from '../components/Articles';
+import CommentsList from '../components/CommentsList';
 
 const Article = () => {
   const {name} = useParams(); 
   const article = articleContent.find((article)=>article.name ===name);
-  const [articleInfo, setarticleInfo] = useState({comments:[]});
+  const [articleInfo, setArticleInfo] = useState({comments:[]});
 
   useEffect(()=>{
-    console.log("Component Mounted");
-  })
+    const fetchData = async () => {
+      const result = await fetch(`/api/articles/${name}`)
+      const body = await result.json();
+      console.log(body);
+      setArticleInfo(body);
+    }
+    fetchData();
+  }, [name])
 
   if (!article) return <NotFound/>
   const otherArticles = articleContent.filter((article)=>article.name !==name);
@@ -34,6 +41,7 @@ const Article = () => {
             {paragraph}
             </p>
           ))}
+          <CommentsList comments={articleInfo.comments}/>
           <h1 className='sm:text-2x text-xl font-bold mt-4 mb-4 text-gray-900'>
             Other Articles
           </h1>
