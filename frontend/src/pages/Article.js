@@ -9,7 +9,7 @@ import NotFound from './NotFound';
 //Components
 import Articles from '../components/Articles';
 import CommentsList from '../components/CommentsList';
-
+import AddCommentForm from '../components/AddCommentForm';
 const Article = () => {
   const {name} = useParams(); 
   const article = articleContent.find((article)=>article.name ===name);
@@ -27,7 +27,6 @@ const Article = () => {
 
   if (!article) return <NotFound/>
   const otherArticles = articleContent.filter((article)=>article.name !==name);
-  // console.log(otherArticles)
   console.log(typeof(otherArticles))
   console.log(otherArticles)
   console.log(typeof(article))
@@ -42,6 +41,7 @@ const Article = () => {
             </p>
           ))}
           <CommentsList comments={articleInfo.comments}/>
+          <AddCommentForm articleName={name} setArticleInfo={setArticleInfo} />
           <h1 className='sm:text-2x text-xl font-bold mt-4 mb-4 text-gray-900'>
             Other Articles
           </h1>

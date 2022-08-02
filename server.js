@@ -28,6 +28,15 @@ app.get("/api/articles/:name", async (req,res)=>{
             res.status(200).json(articleInfo);
             },res)        
     });
+
+    app.get("/api/articles/all", async (req,res)=>{
+        withDB(async(db)=>{
+            const articleInfo = await db
+            .collection("articles")
+            .find({});
+        res.status(200).json(articleInfo);
+        },res)        
+});
   
 app.post("/api/articles/:name/add-comments", (req,res)=>{
   const {username, text} = req.body;
